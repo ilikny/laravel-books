@@ -119,6 +119,10 @@ button{
 
 ul{
   list-style-type: none;
+  background-color: lightgray;
+  border-radius: 5px;
+  padding: 10px;
+  max-width: 300px;
 }
 
 textarea{
@@ -126,8 +130,8 @@ textarea{
   background-color: aliceblue;
 }
 
-.reviews{
-  font-size: 2em;
-  text-decoration: underline;
-  color: darkblue;
-}
+// .reviews{
+//   font-size: 2em;
+//   text-decoration: underline;
+//   color: darkblue;
+// }

@@ -15,7 +15,7 @@
 <br>
 
 @auth
-<a class="reviews" href="{{route('allReviews', $book->id)}}">Show reviews</a>
+{{-- <a class="reviews" href="{{route('allReviews', $book->id)}}">Show reviews</a> --}}
 <br>
 @include('common/errors')
 
@@ -30,7 +30,7 @@
   
 
 </form>
-{{-- @include('books.review') --}}
+@include('books.review')
 @endauth
 
 

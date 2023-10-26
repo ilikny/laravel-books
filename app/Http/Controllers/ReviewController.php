@@ -21,6 +21,7 @@ class ReviewController extends Controller
 
     session()->flash('success_message', 'Success!');
 
+
     return redirect()->route('book.detail', $book_id);
   }
 
@@ -41,6 +42,6 @@ class ReviewController extends Controller
     $review = Review::findOrFail($id);
     $review->delete();
 
-    return redirect()->route('allReviews', $review->book_id);
+    return redirect()->route('book.detail', $review->book_id);
   }
 }

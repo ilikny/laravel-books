@@ -13,6 +13,10 @@ class BookController extends Controller
   {
     $book = Book::findOrFail($book_id);
 
-    return view('books.detail', compact('book'));
+    $reviews = Review::where('book_id', $book_id)
+      ->orderBy('created_at')
+      ->get();
+
+    return view('books.detail', compact('book', 'reviews'));
   }
 }
