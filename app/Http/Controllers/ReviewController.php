@@ -9,6 +9,9 @@ class ReviewController extends Controller
 {
   public function store(Request $request, $book_id = null)
   {
+    $this->validate($request, [
+      'text' => 'required'
+    ]);
 
     $review = new Review();
     $review->book_id = $book_id;
@@ -16,17 +19,28 @@ class ReviewController extends Controller
     $review->text = $request->input('text');
     $review->save();
 
+    session()->flash('success_message', 'Success!');
+
     return redirect()->route('book.detail', $book_id);
   }
 
 
+
   public function allReviews($book_id)
   {
-    $reviews = Review::query()
-      ->where('book_id', $book_id)
+    $reviews = Review::where('book_id', $book_id)
       ->orderBy('created_at')
       ->get();
 
-    return view('books.detail', compact('reviews'));
+
+    return view('books.review', compact('reviews'));
+  }
+
+  public function destroy(string $id)
+  {
+    $review = Review::findOrFail($id);
+    $review->delete();
+
+    return redirect()->route('allReviews', $review->book_id);
   }
 }

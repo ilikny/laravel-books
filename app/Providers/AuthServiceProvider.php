@@ -26,6 +26,11 @@ class AuthServiceProvider extends ServiceProvider
       return $user->id == 2;
     });
 
+
+    Gate::define('admin', function ($user) {
+      return $user->role == 'admin';
+    });
+
     //decide if the user is an administrator
     // if (str_end_with($user->email, '@data4you.cz')){
     //   return true;

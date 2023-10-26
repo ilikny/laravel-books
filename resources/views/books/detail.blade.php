@@ -15,26 +15,23 @@
 <br>
 
 @auth
+<a class="reviews" href="{{route('allReviews', $book->id)}}">Show reviews</a>
+<br>
+@include('common/errors')
+
 <form action="{{ route('book.review', $book->id)}}" method="post">
   @csrf
   Write a review:
   <br>
   <textarea name="text" ></textarea>
-   <br>
-
+  <br>
+  
   <button>Submit</button>
-
+  
 
 </form>
+{{-- @include('books.review') --}}
 @endauth
 
-{{-- <h3>Reviews:</h3>
-<ul>
-@foreach ($reviews as $review )
-<li>{{$review->text}}</li>
-
-
-@endforeach
-</ul> --}}
 
 @endsection

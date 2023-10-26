@@ -1,7 +1,7 @@
 {{-- <div>
     <!-- You must be the change you wish to see in the world. - Mahatma Gandhi -->
 </div> --}}
-<label for="search">Search:</label>
+<label for="search">Search book:</label>
 <input type="text" id="search" name="search">
 
 <div id="results"></div>

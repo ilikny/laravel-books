@@ -18,12 +18,14 @@
 
   <a href="{{ route('admin-author-create') }}" class="{{ $current_page == 'admin-authors-create' ? 'highlighted' : '' }}">Create author</a>
 
+  
 
   <form action="{{ route('logout') }}" method="post">
  
     @csrf
     <br>
-    <button id="logout">Logout</button>
+    <label class="logout" for="logout">{{auth()->user()->email}}</label>
+    <button class="logout" name="logout" id="logout">Logout</button>
  
 
   </form>

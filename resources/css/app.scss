@@ -15,7 +15,7 @@ nav a{
 }
 
 img{
-  width: 30%;
+  width: 40%;
 }
 
 .main {
@@ -26,14 +26,22 @@ img{
 
 .book{
   margin: 0.5em;
-  padding: 1.5em;
+  padding: 0.5em;
   width: 200px;
   height: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   // border: 1px solid black;
   border-radius: 5px;
   background-color: aliceblue;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
 
+.book:hover {
+  transform: scale(1.05);
 }
 
 .books{
@@ -42,7 +50,8 @@ img{
 }
 
 a {
-  color: rgb(56, 56, 56)
+  color: rgb(56, 56, 56);
+  text-decoration: none;
 }
 
 .book_latest{
@@ -52,9 +61,13 @@ a {
       height: 520px;
       // border: 1px solid black;
       border-radius: 5px;
-      background-color: aliceblue;
+      background-color: rgb(224, 232, 238);
       box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-
+      cursor: pointer;
+      transition: transform 0.3s ease;
+}
+.book_latest:hover {
+  transform: scale(1.05);
 }
 
 button{
@@ -73,12 +86,16 @@ button{
       flex-wrap: wrap;
 }
 
+.logout{
+    position: relative;
+      left: 430px;
+      bottom: 55px;
+
+}
+
 #logout{
   padding: 10px 20px;
   font-size: 16px;
-  position: relative;
-  left: 400px;
-  bottom: 52px;
   cursor: pointer;
   transition: transform 0.3s ease;
   }
@@ -88,3 +105,29 @@ button{
 #logout:hover {
       transform: scale(1.2);
     }
+
+
+.alert-danger{
+  color: red;
+  font-size: large;
+}
+
+.alert-success{
+    color: green;
+    font-size: large;
+  }
+
+ul{
+  list-style-type: none;
+}
+
+textarea{
+  border-radius: 5px;
+  background-color: aliceblue;
+}
+
+.reviews{
+  font-size: 2em;
+  text-decoration: underline;
+  color: darkblue;
+}

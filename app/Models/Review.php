@@ -5,6 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Book;
+use App\Models\User;
+
 
 class Review extends Model
 {
@@ -13,5 +15,10 @@ class Review extends Model
   public function books()
   {
     return $this->belongsToMany(Book::class);
+  }
+
+  public function users()
+  {
+    return $this->belongsToMany(User::class);
   }
 }

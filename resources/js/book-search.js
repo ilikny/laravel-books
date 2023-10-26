@@ -13,13 +13,12 @@ search.addEventListener('input', (event) => {
     
     div.innerHTML = ''
     data.forEach((element) => {
-      div.innerHTML += `<div class="book_latest">
-      <h3><a href="/book/${element.id}">${element.title}</a></h3>
+      div.innerHTML += `<a href="/book/${element.id}"><div class="book_latest">
+      <h3>${element.title}</h3>
       <img src="${element.image}" alt="">
-      <h6>${element.publication_date}</h6>
       <h3>${element.price}$</h3>
       ${element.description} 
-      </div>`
+      </div></a>`
       
     });
     

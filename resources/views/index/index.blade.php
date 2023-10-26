@@ -14,12 +14,14 @@
   <h2>Crime books:</h2>
   <div class="books">
   @foreach ($crime_books as $book)
+  <a href="/book/{{ $book->id }}">
     <div class="book">
-        <h3><a href="/book/{{ $book->id }}">{{ $book->title }}</a></h3>
+        <h4><strong>{{ $book->title }}</strong></h4>
         <p> {{$book->authors->pluck('name')->join(', ') }} </p>
         <img src="{{ $book->image }}" alt="">
         <p>{{ $book->price }}$</p>
     </div>
+    </a>
 
 
 @endforeach
